@@ -1,3 +1,41 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-native",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "es2015",
+    "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
+    "checkJs": true, /* Enable error reporting in type-checked JavaScript files. */
+    "paths": {
+      "@GoalTrackingApp/*": [
+        "./src/*"
+      ],
+      "@GoalTrackingApp/assets/*": [
+        "./src/assets/*"
+      ],
+      "@GoalTrackingApp/components/*": [
+        "./src/components/*"
+      ],
+      "@GoalTrackingApp/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@GoalTrackingApp/models/*": [
+        "./src/models/*"
+      ],
+      "@GoalTrackingApp/navigation/*": [
+        "./src/navigation/*"
+      ],
+      "@GoalTrackingApp/redux/*": [
+        "./src/redux/*"
+      ],
+      "@GoalTrackingApp/screens/*": [
+        "./src/screens/*"
+      ],
+      "@GoalTrackingApp/theme/*": [
+        "./src/theme/*"
+      ],
+    }
+  }
 }
