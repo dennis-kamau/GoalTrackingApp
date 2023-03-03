@@ -17,7 +17,7 @@ import Fonts from './Fonts';
 
 const ThemeContext = createContext<ITheme>({
   colors: LightThemeColors,
-  font: Fonts,
+  fonts: Fonts,
   theme: {
     ...PaperDarkTheme,
     ...NavigationDarkTheme,
@@ -40,7 +40,7 @@ export const ThemeProvider = React.memo<IProps>((props: IProps) => {
   const MemoizedValue = React.useMemo(() => {
     return {
       colors: themeMode === 'light' ? LightThemeColors : DarkThemeColors,
-      font: Fonts,
+      fonts: Fonts,
       theme: (() => {
         const combinedDarkTheme = {
           ...PaperDarkTheme,

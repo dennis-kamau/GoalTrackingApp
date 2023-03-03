@@ -3,7 +3,7 @@ import IFont from './Font';
 import ICombinedTheme from './Theme';
 
 export default interface ITheme {
-  font: IFont;
+  fonts: IFont;
   colors: IColorTheme;
   theme: ICombinedTheme;
 }
