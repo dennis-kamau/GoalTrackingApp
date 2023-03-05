@@ -14,7 +14,12 @@ const BottomTab = createBottomTabNavigator();
 
 export default function AppTab() {
   return (
-    <BottomTab.Navigator initialRouteName="Tasks">
+    <BottomTab.Navigator
+      initialRouteName="Tasks"
+      backBehavior="history"
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+      }}>
       <BottomTab.Screen
         name="Tasks"
         component={TasksTab}
