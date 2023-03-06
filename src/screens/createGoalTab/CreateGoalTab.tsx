@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native-paper';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import * as yup from 'yup';
@@ -13,6 +14,7 @@ import useTheme from '@GoalTrackingApp/theme';
 const CreateGoalTab: React.FC<{}> = () => {
   const theme = useTheme();
   const styles = CreateGoalTabStyles(theme);
+  const navigation = useNavigation();
 
   const goalValidationSchema = yup.object().shape({
     name: yup.string().required('Goal name is required!'),
@@ -39,8 +41,9 @@ const CreateGoalTab: React.FC<{}> = () => {
         }}
         validateOnBlur={true}
         validationSchema={goalValidationSchema}
-        onSubmit={formData => {
+        onSubmit={async formData => {
           console.log(formData);
+          navigation.navigate('CreateTask');
         }}>
         {({
           handleSubmit,
@@ -64,17 +67,26 @@ const CreateGoalTab: React.FC<{}> = () => {
               label="Category"
               placeholder="Which category does your goal fit?"
               menuItems={[
-                'Personal Development',
                 'Business and Career',
                 'Health and Fitness',
+                'Material Goods',
+                'Money and Finance',
+                'Personal Development',
                 'Relationships and Social',
-                'Finance and Material Goods',
                 'Other',
               ]}
               value={values.category}
               error={errors.category}
               onChangeText={handleChange('category')}
               onBlur={handleBlur('category')}
+            />
+            <TextField
+              label="Unit of Measurement"
+              placeholder="Which units will you measure your progress in?"
+              value={values.measurementUnit}
+              error={errors.measurementUnit}
+              onChangeText={handleChange('measurementUnit')}
+              onBlur={handleBlur('measurementUnit')}
             />
             <TextField
               label="Target Unit"
@@ -84,14 +96,6 @@ const CreateGoalTab: React.FC<{}> = () => {
               onChangeText={handleChange('target')}
               onBlur={handleBlur('target')}
               keyboardType="numeric"
-            />
-            <TextField
-              label="Unit of Measurement"
-              placeholder="Which units will you measure your progress in?"
-              value={values.measurementUnit}
-              error={errors.measurementUnit}
-              onChangeText={handleChange('measurementUnit')}
-              onBlur={handleBlur('measurementUnit')}
             />
             <TextField
               type="date"

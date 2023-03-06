@@ -9,6 +9,10 @@ const GoalsTabStyles = (theme: ITheme) => {
       flex: 1,
       backgroundColor: colors.surface,
     },
+
+    listContainer: {
+      flex: 1,
+    },
   });
 };
 
