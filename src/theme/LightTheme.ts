@@ -7,7 +7,7 @@ const LightThemeColors: IColor = {
   onSurface: '#010203',
   background: '#fff',
   backgroundSecondary: '#f39c12',
-  opacity: 'rgba(243, 157, 18, 0.25)',
+  opacity: 'rgba(0, 0, 255, 0.25)',
   card: '#fff',
   text: '#252525',
   headerText: '#050505',
