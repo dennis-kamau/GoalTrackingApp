@@ -37,7 +37,6 @@ const TextField = React.memo<TextFieldProps>((props: TextFieldProps) => {
               onFocus={() => {
                 setShowDateTime(true);
                 Keyboard.dismiss();
-                console.log('Focused!');
               }}
               cursorColor={colors.primary}
               selectionColor={colors.primary}

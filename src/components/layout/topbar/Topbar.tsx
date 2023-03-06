@@ -24,7 +24,7 @@ const Topbar = ({
       navigation.goBack();
       return;
     }
-    navigation.navigate('Tasks');
+    navigation.navigate('App');
   }, [navigation]);
 
   return (
@@ -34,7 +34,11 @@ const Topbar = ({
           onPress={() => goToPreviousScreen()}
           underlayColor={colors.opacity}
           style={styles.backButton}>
-          <MatericalIcons name="chevron-left" size={25} color={'#eee'} />
+          <MatericalIcons
+            name="chevron-left"
+            size={25}
+            color={colors.onPrimary}
+          />
         </TouchableHighlight>
       )}
       <Text style={[styles.title, fonts.title]} numberOfLines={1}>
